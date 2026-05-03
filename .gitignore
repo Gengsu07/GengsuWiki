@@ -8,6 +8,9 @@ Thumbs.db
 .obsidian/plugins/
 .trash/
 
+# graphify output
+graphify-out/
+
 # Editor
 .vscode/
 .idea/
