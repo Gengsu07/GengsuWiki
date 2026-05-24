@@ -1,0 +1,18 @@
+filters:
+  and:
+    - file.hasTag("source")
+    - file.ext == "md"
+formulas:
+  source_count: if(sources, sources.length, 0)
+properties:
+  formula.source_count:
+    displayName: Sources
+views:
+  - type: table
+    name: All Sources
+    order:
+      - file.name
+      - date
+      - formula.source_count
+      - status
+      - tags

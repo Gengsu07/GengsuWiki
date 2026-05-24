@@ -14,3 +14,9 @@ graphify-out/
 # Editor
 .vscode/
 .idea/
+
+# Coding agents
+.claude/settings.local.json
+
+# pi local packages (installed via `pi install -l`)
+.pi/npm/

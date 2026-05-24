@@ -1,0 +1,50 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - not:
+        - file.inFolder(".obsidian")
+    - not:
+        - file.inFolder("raw")
+
+formulas:
+  has_sources: 'if(sources && sources.length > 0, "✅", "⚠️")'
+  has_chapter: 'if(chapter, "✅", "⚠️")'
+
+properties:
+  formula.has_sources:
+    displayName: "Sources"
+  formula.has_chapter:
+    displayName: "Chapter"
+
+views:
+  - type: table
+    name: "Draft Pages (needs review)"
+    filters:
+      and:
+        - 'status == "draft"'
+    order:
+      - file.folder
+      - file.name
+      - date
+      - formula.has_sources
+      - formula.has_chapter
+
+  - type: table
+    name: "Learning Paths"
+    filters:
+      and:
+        - file.hasTag("learning-path")
+    order:
+      - file.folder
+      - file.name
+      - date
+      - status
+
+  - type: table
+    name: "All Wiki Pages"
+    order:
+      - file.folder
+      - file.name
+      - status
+      - date
+      - formula.has_sources

@@ -1,0 +1,30 @@
+filters:
+  and:
+    - file.hasTag("concept")
+    - file.inFolder("wiki/concept")
+formulas:
+  source_count: if(sources, sources.length, 0)
+properties:
+  formula.source_count:
+    displayName: Sources
+views:
+  - type: cards
+    name: Concepts by Chapter
+    groupBy:
+      property: chapter
+      direction: ASC
+    order:
+      - file.name
+      - chapter
+      - difficulty
+      - status
+      - date
+  - type: table
+    name: All Concepts (Table)
+    order:
+      - file.name
+      - chapter
+      - difficulty
+      - status
+      - formula.source_count
+      - date

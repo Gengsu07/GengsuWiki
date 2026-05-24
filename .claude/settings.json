@@ -1,0 +1,17 @@
+{
+  "ignorePatterns": [
+    "graphify-out/",
+    ".obsidian/plugins/",
+    ".trash/",
+    "raw/assets/"
+  ],
+  "allowedTools": [
+    "Read",
+    "Write",
+    "Edit",
+    "Bash",
+    "Search",
+    "Grep",
+    "WebFetch"
+  ]
+}
